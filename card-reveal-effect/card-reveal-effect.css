@@ -1,0 +1,44 @@
+.card-container {
+    place-items: center center;
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    display: flex;
+}
+
+.card {
+    margin-left: -10em;
+    height: 200px;
+    width: 12em;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: margin-left 200ms;
+    border-radius: 12px 12px;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.card:hover+.card {
+    margin-left: 1em;
+}
+
+.card>.card-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    height: 20%;
+}
+
+.card>.card-body {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    height: 80%;
+    text-align: center;
+}

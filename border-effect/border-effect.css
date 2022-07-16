@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0c1022;
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: rgb(0, 0, 0, 0.75);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent, transparent, #00ccff);
+    animation-name: animate;
+    animation-timing-function: linear;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent, transparent, #d400d4);
+    animation-name: animate;
+    animation-timing-function: linear;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.box>div.box-inside {
+    position: absolute;
+    inset: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background: #0c1022;
+    z-index: 1;
+    align-items: center;
+    color: #fff;
+    padding: 5px;
+}
+
+.box>div.box-inside>div.box-header {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.box>div.box-inside>div.box-content {
+    padding: 10px;
+    height: 80%;
+    display: flex;
+    text-align: justify;
+    width: 100%;
+}
