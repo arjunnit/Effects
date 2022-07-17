@@ -1,0 +1,132 @@
+* {
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 700;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #162052;
+}
+
+.box {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    inset: -10px 100px;
+    background: linear-gradient(315deg, #00ccff, #d400d4);
+    transition: 0.5s;
+    animation-name: animate;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+}
+
+.box:hover::before {
+    inset: -20px 0px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: #162052;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.box>.box-content {
+    position: absolute;
+    inset: 30px;
+    border: 6px solid #070a1c;
+    z-index: 3;
+    border-radius: 50%;
+    object-fit: contain;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box>.box-content>.box-content-front {
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.box>.box-content>.box-content-back {
+    width: 0%;
+    color: #fff;
+    display: none;
+}
+
+.box:hover .box-content-front {
+    width: 0%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.box:hover .box-content-back {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.box-content-back h2 {
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+}
+
+.box-content-back span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 5px 0 20px;
+    font-weight: 400;
+}
+
+.box-content-back button {
+    font-size: 1rem;
+    margin: 10px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.box-content-back button:hover {
+    letter-spacing: 0.15rem;
+    padding: 5px 20px;
+    transition: 0.2s;
+    color: #162052;
+}
